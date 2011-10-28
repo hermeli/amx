@@ -3,7 +3,8 @@ git submodule init && git submodule update
 
 for module_dir in buildroot kernel software uboot
 do
-	cd module_dir
+	cd $module_dir
 	git checkout master
+	git pull
 	cd ..
 done
