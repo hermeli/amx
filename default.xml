@@ -10,4 +10,6 @@
   <project path="kernel" name="amx_kernel" />
   <project path="software" name="amx_software" />
   <project path="uboot" name="amx_uboot" />  
+  
+  <project path="amx" name="amx" />  
 </manifest>
