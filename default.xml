@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="amx"
-           fetch="git@10.2.24.98" />
+           fetch="ssh://git@10.2.24.98/" />
            
   <default revision="master"
            remote="amx" />
