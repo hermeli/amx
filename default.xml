@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
   <remote  name="amx"
            fetch="ssh://git@10.2.24.98/" />
            
@@ -11,4 +10,4 @@
   <project path="kernel" name="amx_kernel">
   <project path="software" name="amx_software">
   <project path="uboot" name="amx_uboot">  
-<manifest>
+</manifest>
