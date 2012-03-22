@@ -17,10 +17,14 @@ Now enter the following to initialize the repository:
 
     mkdir ~/amx
     cd ~/amx 
-    repo init -u ssh://git@10.2.24.98/amx.git
+    repo init -u ssh://git@github.com/amx.git
     repo sync
     
+Start a local branch to work with:
+
+    repo start master --all
+
 Using repo
 ----------
 
-[Git and Repo](http://source.android.com/download/using-repo)
+[Git and Repo](http://source.android.com/source/version-control.html)
