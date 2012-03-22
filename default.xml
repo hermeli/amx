@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="amx"
-           fetch="ssh://git@10.2.24.98/" />
+           fetch="ssh://git@github.com/luklanis/" />
            
   <default revision="master"
            remote="amx" />
            
   <project path="buildroot" name="amx_buildroot" />
-  <project path="kernel" name="amx_kernel" revision="master" />
+  <project path="kernel" name="amx_kernel" />
   <project path="software" name="amx_software" />
   <project path="uboot" name="amx_uboot" />  
   
