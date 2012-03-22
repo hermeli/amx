@@ -17,7 +17,7 @@ Now enter the following to initialize the repository:
 
     mkdir ~/amx
     cd ~/amx 
-    repo init -u ssh://git@github.com/amx.git
+    repo init -u ssh://git@github.com/luklanis/amx.git
     repo sync
     
 Start a local branch to work with:
