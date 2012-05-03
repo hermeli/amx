@@ -7,6 +7,7 @@
            remote="amx" />
            
   <project path="buildroot" name="amx_buildroot" />
+  <project path="bootstrap" name="amx_bootstrap" />
   <project path="kernel" name="amx_kernel" revision="master" />
   <project path="software" name="amx_software" />
   <project path="uboot" name="amx_uboot" />  
