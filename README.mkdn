@@ -28,3 +28,11 @@ Using repo
 ----------
 
 [Git and Repo](http://source.android.com/source/version-control.html)
+
+Build the AMX system
+--------------------
+
+    cd buildroot
+    make
+
+For more details read ./builroot/README.md
