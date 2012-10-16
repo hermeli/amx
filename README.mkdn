@@ -24,15 +24,47 @@ Start a local branch to work with:
 
     repo start master --all
 
+
 Using repo
 ----------
 
 [Git and Repo](http://source.android.com/source/version-control.html)
 
-Build the AMX system
---------------------
+
+Build the AMX root file system and toolchain
+--------------------------------------------
 
     cd buildroot
     make
 
 For more details read ./builroot/README.md
+
+
+Build the AMX u-boot
+--------------------
+
+    cd uboot
+    export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/linux-arm->
+    make amm_config
+    make all
+
+
+Build the AMX kernel
+--------------------
+
+    cd kernel
+    export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/linux-arm->
+    make ARCH=arm
+    make uImage ARCH=arm
+
+
+Save kernel on AMX (u-boot already exists)
+------------------------------------------
+
+On AMX over serial terminal type (env's already set):
+
+    tftpboot
+    erase 0x10300000 end    // end <- something like 0x1049FFFF
+    cp.b 0x22000000 0x10300000 length   // length -< something like 0x19870C
+
+
