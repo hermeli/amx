@@ -44,7 +44,7 @@ Build the AMX u-boot
 --------------------
 
     cd uboot
-    export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/linux-arm->
+    export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/arm-unknown-linux-uclibcgnueabi->
     make amm_config
     make all
 
