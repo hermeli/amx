@@ -55,16 +55,70 @@ Build the AMX kernel
     cd kernel
     export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/linux-arm->
     make ARCH=arm
+
+The first time you need to install mkimage to build uImage
+
+    sudo aptitude install uboot-mkimage
+
+Create the uImage
+
     make uImage ARCH=arm
 
 
-Save kernel on AMX (u-boot already exists)
-------------------------------------------
+Prepare for tftp
+----------------
+
+    cp buildroot/output/images/rootfs.jffs2 /tftpboot/
+    cp uboot/u-boot.bin /tftpboot/
+    cp kernel/arch/arm/boot/uImage /tftpboot/
+
+To set the ethernet env's type on AMX over serial terminal:
+
+    setenv ipaddr <ip address>
+    setenv gatewayip <gateway address>
+    setenv netmask <subnet mask>
+    setenv serverip <tftp server address>
+    saveenv
+
+
+Update u-boot
+-------------
 
 On AMX over serial terminal type (env's already set):
 
-    tftpboot
-    erase 0x10300000 end    // end <- something like 0x1049FFFF
-    cp.b 0x22000000 0x10300000 length   // length -< something like 0x19870C
+    tftp 0x21000000 u-boot.bin
+    protect off 0x10020000 0x1005FFFF
+    erase 0x10020000 0x1005FFFF
+    cp.b 0x21000000 0x10020000 ${filesize}
 
+
+Update kernel only
+------------------
+
+On AMX over serial terminal type (env's already set):
+
+    tftp 0x21000000 uImage
+    erase 0x10080000 end    // end <- something like 0x1017FFFF (startaddr + ${filesize} < (endaddr == end of block))
+    cp.b 0x21000000 0x10080000 ${filesize}
+
+
+Update root fs
+--------------
+
+On AMX over serial terminal type (env's already set):
+
+    tftp 0x21000000 rootfs.jffs2
+    erase 0x10400000 0x10ffffff
+    cp.b 0x21000000 0x10400000 ${filesize}
+
+
+Update kernel and root fs together
+----------------------------------
+
+On AMX over serial terminal type (env's already set):
+
+    setenv kernel uImage
+    setenv rootfs rootfs.jffs2
+    erase 0x10080000 0x10ffffff
+    run tftpinstallkernel
 
