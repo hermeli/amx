@@ -52,17 +52,12 @@ Build the AMX u-boot
 Build the AMX kernel
 --------------------
 
-    cd kernel
-    export CROSS_COMPILE=</path/to/amx/buildroot/output/host/usr/bin/linux-arm->
-    make ARCH=arm
-
 The first time you need to install mkimage to build uImage
 
     sudo aptitude install uboot-mkimage
 
-Create the uImage
-
-    make uImage ARCH=arm
+    cd kernel
+    ./kernel_cross_build.sh
 
 
 Build node
