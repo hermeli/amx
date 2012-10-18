@@ -14,7 +14,7 @@
   <project path="kernel" name="amx_kernel" revision="master" />
   <project path="software" name="amx_software" />
   <project path="uboot" name="amx_uboot" />  
-  <project path="node" remote="node" revision="v0.8.11-release" />
+  <project path="node" remote="node" name="node" revision="v0.8.11-release" />
   
   <project path="amx" name="amx" />  
 </manifest>
