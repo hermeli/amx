@@ -65,6 +65,24 @@ Create the uImage
     make uImage ARCH=arm
 
 
+Build node
+----------
+
+    cp amx/node_cross_compile.sh node/
+    cd node
+
+The toolchain of buildroot uses uClibc. Because the V8 does a wrong test we have to remove some code:
+
+    vim vim deps/v8/src/platform-linux.cc
+    // type "1036 Ctrl-g 5dd jjj dd"
+    // This vim commands go to line 1036, removes the 5 rows below, goes 3 rows down and remove again a row.
+    // Type ":wq" to save and close vim
+
+Now run the script to build node
+
+    ./node_cross_compile.sh
+
+
 Prepare for tftp
 ----------------
 
