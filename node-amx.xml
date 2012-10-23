@@ -6,14 +6,14 @@
   <remote  name="local"
            fetch="ssh://git@10.2.24.98/" />
            
-  <default revision="master"
+  <default revision="node-amx"
            remote="origin" />
            
   <project path="buildroot" name="amx_buildroot" />
   <project path="bootstrap" name="amx_bootstrap" />
   <project path="kernel" name="amx_kernel" />
   <project path="software" name="amx_software" />
-  <project path="software/app" name="amx_software_app" remote="local" revision="master" />
+  <project path="software/app" name="amx_software_app" remote="local" revision="node-amx" />
   <project path="uboot" name="amx_uboot" />  
   
   <project path="amx" name="amx" />  
