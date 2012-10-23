@@ -3,9 +3,6 @@
   <remote  name="amx"
            fetch="ssh://git@github.com/luklanis/" />
            
-  <remote  name="node"
-           fetch="https://github.com/joyent/" />
-           
   <default revision="master"
            remote="amx" />
            
@@ -14,7 +11,6 @@
   <project path="kernel" name="amx_kernel" revision="master" />
   <project path="software" name="amx_software" />
   <project path="uboot" name="amx_uboot" />  
-  <project path="node" remote="node" name="node" revision="v0.8.11-release" />
   
   <project path="amx" name="amx" />  
 </manifest>

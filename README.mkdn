@@ -63,8 +63,11 @@ The first time you need to install mkimage to build uImage
 Build node
 ----------
 
+    cd ./   // (root directory of amx repository)
+    git clone https://github.com/joyent/node.git
     cp amx/node_cross_compile.sh node/
     cd node
+    git checkout v0.8.12
 
 The toolchain of buildroot uses uClibc. Because the V8 does a wrong test we have to remove some code:
 
@@ -76,6 +79,15 @@ The toolchain of buildroot uses uClibc. Because the V8 does a wrong test we have
 Now run the script to build node
 
     ./node_cross_compile.sh
+
+
+## Build node-sqlite3
+
+    cd ./   // (root directory of amx repository)
+    git clone git://github.com/developmentseed/node-sqlite3.git
+    cp amx/node-sqlite3_cross_compile.sh node-sqlite3/
+    cd node-sqlite3
+    ./node-sqlite3_cross_compile.sh
 
 
 Prepare for tftp
