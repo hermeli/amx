@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="amx"
+  <remote  name="amx" fetch="ssh://git@github.com/luklanis/" />
            
   <default revision="master"
            remote="amx" />
